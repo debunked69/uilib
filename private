@@ -179,7 +179,7 @@ function VLib:Window(textgame)
 	CircleName.Font = Enum.Font.Gotham
 	CircleName.Text = "WSD"
 	CircleName.TextColor3 = Color3.fromRGB(255, 255, 255)
-	CircleName.TextSize = 16.000
+	CircleName.TextSize = 8.000
 
 	GameTitle.Name = "GameTitle"
 	GameTitle.Parent = LeftFrame
@@ -370,9 +370,9 @@ function VLib:Window(textgame)
 				function()
 					pcall(callback)
 					Button.TextSize = 0
-					TweenService:Create(Button, TweenInfo.new(.2, Enum.EasingStyle.Quad), {TextSize = 17}):Play()
+					TweenService:Create(Button, TweenInfo.new(.2, Enum.EasingStyle.Quad), {TextSize = 8.5}):Play()
 					wait(.2)
-					TweenService:Create(Button, TweenInfo.new(.2, Enum.EasingStyle.Quad), {TextSize = 14}):Play()
+					TweenService:Create(Button, TweenInfo.new(.2, Enum.EasingStyle.Quad), {TextSize = 7}):Play()
 				end
 			)
 		end
