@@ -44,12 +44,12 @@ local function MakeDraggable(topbarobject, object)
 		local Delta = input.Position - DragStart
 		local pos =
 			UDim2.new(
-				StartPosition.X.Scale,
-				StartPosition.X.Offset + Delta.X,
-				StartPosition.Y.Scale,
-				StartPosition.Y.Offset + Delta.Y
+				StartPosition.X.Scale / 2,
+				(StartPosition.X.Offset + Delta.X) / 2,
+				StartPosition.Y.Scale / 2,
+				(StartPosition.Y.Offset + Delta.Y) / 2
 			)
-		local Tween = TweenService:Create(object, TweenInfo.new(0.2), {Position = pos})
+		local Tween = TweenService:Create(object, TweenInfo.new(0.1), {Position = pos})
 		Tween:Play()
 	end
 
@@ -133,7 +133,7 @@ function VLib:Window(textgame)
 	MainFrame.Parent = Library
 	MainFrame.BackgroundColor3 = Color3.fromRGB(22, 23, 27)
 	MainFrame.Position = UDim2.new(0.340104192, 0, 0.297149122, 0)
-	MainFrame.Size = UDim2.new(0, 307, 0, 197.5)
+	MainFrame.Size = UDim2.new(0, 614, 0, 395)
 
 	MainCorner.CornerRadius = UDim.new(0, 7)
 	MainCorner.Name = "MainCorner"
@@ -143,7 +143,7 @@ function VLib:Window(textgame)
 	LeftFrame.Parent = MainFrame
 	LeftFrame.BackgroundColor3 = Color3.fromRGB(32, 33, 37)
 	LeftFrame.Position = UDim2.new(-0.000674468291, 0, -0.000149806539, 0)
-	LeftFrame.Size = UDim2.new(0, 93, 0, 197.5)
+	LeftFrame.Size = UDim2.new(0, 186, 0, 395)
 
 	LeftFrameCorner.CornerRadius = UDim.new(0, 7)
 	LeftFrameCorner.Name = "LeftFrameCorner"
@@ -154,18 +154,18 @@ function VLib:Window(textgame)
 	MainTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	MainTitle.BackgroundTransparency = 1.000
 	MainTitle.Position = UDim2.new(0.324129045, 0, 0.0512162149, 0)
-	MainTitle.Size = UDim2.new(0, 35.5, 0, 10)
+	MainTitle.Size = UDim2.new(0, 71, 0, 20)
 	MainTitle.Font = Enum.Font.Gotham
 	MainTitle.Text = MAINTTL
 	MainTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
-	MainTitle.TextSize = 6.000
+	MainTitle.TextSize = 14.000
 	MainTitle.TextXAlignment = Enum.TextXAlignment.Left
 
 	Circle.Name = "Circle"
 	Circle.Parent = LeftFrame
 	Circle.BackgroundColor3 = Color3.fromRGB(118, 106, 255)
 	Circle.Position = UDim2.new(0.0834304541, 0, 0.0474189818, 0)
-	Circle.Size = UDim2.new(0, 19, 0, 19)
+	Circle.Size = UDim2.new(0, 38, 0, 38)
 
 	CircleCorner.CornerRadius = UDim.new(2, 0)
 	CircleCorner.Name = "CircleCorner"
@@ -175,22 +175,22 @@ function VLib:Window(textgame)
 	CircleName.Parent = Circle
 	CircleName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	CircleName.BackgroundTransparency = 1.000
-	CircleName.Size = UDim2.new(0, 19, 0, 18.5)
+	CircleName.Size = UDim2.new(0, 38, 0, 37)
 	CircleName.Font = Enum.Font.Gotham
 	CircleName.Text = "WSD"
 	CircleName.TextColor3 = Color3.fromRGB(255, 255, 255)
-	CircleName.TextSize = 4.000
+	CircleName.TextSize = 16.000
 
 	GameTitle.Name = "GameTitle"
 	GameTitle.Parent = LeftFrame
 	GameTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	GameTitle.BackgroundTransparency = 1.000
 	GameTitle.Position = UDim2.new(0.324129164, 0, 0.0892162398, 0)
-	GameTitle.Size = UDim2.new(0, 35.5, 0, 10)
+	GameTitle.Size = UDim2.new(0, 71, 0, 20)
 	GameTitle.Font = Enum.Font.Gotham
 	GameTitle.Text = textgame
 	GameTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
-	GameTitle.TextSize = 6.000
+	GameTitle.TextSize = 14.000
 	GameTitle.TextTransparency = 0.400
 	GameTitle.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -199,7 +199,7 @@ function VLib:Window(textgame)
 	TabHolder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	TabHolder.BackgroundTransparency = 1.000
 	TabHolder.Position = UDim2.new(0.0806451589, 0, 0.189360261, 0)
-	TabHolder.Size = UDim2.new(0, 79.5, 0, 154.5)
+	TabHolder.Size = UDim2.new(0, 159, 0, 309)
 
 	TabHoldLayout.Name = "TabHoldLayout"
 	TabHoldLayout.Parent = TabHolder
@@ -210,7 +210,7 @@ function VLib:Window(textgame)
 	RainbowLine.Parent = MainFrame
 	RainbowLine.BackgroundColor3 = Color3.fromRGB(118, 106, 255)
 	RainbowLine.Position = UDim2.new(-0.000674468291, 0, -0.000149783576, 0)
-	RainbowLine.Size = UDim2.new(0, 307, 0, 1)
+	RainbowLine.Size = UDim2.new(0, 614, 0, 2)
 
 	RainbowLineCorner.CornerRadius = UDim.new(0, 7)
 	RainbowLineCorner.Name = "RainbowLineCorner"
@@ -224,7 +224,7 @@ function VLib:Window(textgame)
 	DragFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	DragFrame.BackgroundTransparency = 1.000
 	DragFrame.Position = UDim2.new(0.30130294, 0, 0.00253164559, 0)
-	DragFrame.Size = UDim2.new(0, 214, 0, 10.5)
+	DragFrame.Size = UDim2.new(0, 428, 0, 21)
 	MakeDraggable(DragFrame, MainFrame)
 
 	coroutine.wrap(
@@ -244,12 +244,12 @@ function VLib:Window(textgame)
 		Tab.Name = "Tab"
 		Tab.Parent = TabHolder
 		Tab.BackgroundColor3 = Color3.fromRGB(118, 106, 255)
-		Tab.Size = UDim2.new(0, 79.5, 0, 14.5)
+		Tab.Size = UDim2.new(0, 159, 0, 29)
 		Tab.AutoButtonColor = false
 		Tab.Font = Enum.Font.SourceSans
 		Tab.Text = ""
 		Tab.TextColor3 = Color3.fromRGB(0, 0, 0)
-		Tab.TextSize = 7.000
+		Tab.TextSize = 14.000
 		Tab.BackgroundTransparency = 1
 
 		TabCorner.CornerRadius = UDim.new(0, 6)
@@ -261,11 +261,11 @@ function VLib:Window(textgame)
 		Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		Title.BackgroundTransparency = 1.000
 		Title.Position = UDim2.new(0.0566037744, 0, 0, 0)
-		Title.Size = UDim2.new(0, 75, 0, 13.5)
+		Title.Size = UDim2.new(0, 150, 0, 29)
 		Title.Font = Enum.Font.Gotham
 		Title.Text = text
 		Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-		Title.TextSize = 7.000
+		Title.TextSize = 14.000
 		Title.TextXAlignment = Enum.TextXAlignment.Left
 
 		local Container = Instance.new("ScrollingFrame")
@@ -278,7 +278,7 @@ function VLib:Window(textgame)
 		Container.BackgroundTransparency = 1.000
 		Container.BorderSizePixel = 0
 		Container.Position = UDim2.new(0.322475582, 0, 0.0506329127, 0)
-		Container.Size = UDim2.new(0, 205.5, 0, 179.5)
+		Container.Size = UDim2.new(0, 411, 0, 359)
 		Container.ScrollBarThickness = 3
 		Container.CanvasSize = UDim2.new(0, 0, 0, 0)
 		Container.Visible = false
@@ -334,11 +334,11 @@ function VLib:Window(textgame)
 			Button.Name = "Button"
 			Button.Parent = Container
 			Button.BackgroundColor3 = Color3.fromRGB(32, 33, 37)
-			Button.Size = UDim2.new(0, 201.5, 0, 14)
+			Button.Size = UDim2.new(0, 403, 0, 28)
 			Button.AutoButtonColor = false
 			Button.Font = Enum.Font.Gotham
 			Button.TextColor3 = Color3.fromRGB(255, 255, 255)
-			Button.TextSize = 7.000
+			Button.TextSize = 14.000
 			Button.Text = text
 
 			ButtonCorner.CornerRadius = UDim.new(0, 6)
@@ -370,9 +370,9 @@ function VLib:Window(textgame)
 				function()
 					pcall(callback)
 					Button.TextSize = 0
-					TweenService:Create(Button, TweenInfo.new(.2, Enum.EasingStyle.Quad), {TextSize = 8.5}):Play()
+					TweenService:Create(Button, TweenInfo.new(.2, Enum.EasingStyle.Quad), {TextSize = 17}):Play()
 					wait(.2)
-					TweenService:Create(Button, TweenInfo.new(.2, Enum.EasingStyle.Quad), {TextSize = 7}):Play()
+					TweenService:Create(Button, TweenInfo.new(.2, Enum.EasingStyle.Quad), {TextSize = 14}):Play()
 				end
 			)
 		end
@@ -392,12 +392,12 @@ function VLib:Window(textgame)
 			Toggle.Parent = Container
 			Toggle.BackgroundColor3 = Color3.fromRGB(32, 33, 37)
 			Toggle.Position = UDim2.new(-0.747557044, 0, 0.729113936, 0)
-			Toggle.Size = UDim2.new(0, 201.5, 0, 14)
+			Toggle.Size = UDim2.new(0, 403, 0, 28)
 			Toggle.AutoButtonColor = false
 			Toggle.Font = Enum.Font.Gotham
 			Toggle.Text = ""
 			Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
-			Toggle.TextSize = 7.000
+			Toggle.TextSize = 14.000
 
 			ToggleCorner.CornerRadius = UDim.new(0, 6)
 			ToggleCorner.Name = "ToggleCorner"
@@ -408,18 +408,18 @@ function VLib:Window(textgame)
 			Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			Title.BackgroundTransparency = 1.000
 			Title.Position = UDim2.new(0.0198511165, 0, 0, 0)
-			Title.Size = UDim2.new(0, 96, 0, 14)
+			Title.Size = UDim2.new(0, 192, 0, 28)
 			Title.Font = Enum.Font.Gotham
 			Title.Text = text
 			Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-			Title.TextSize = 7.000
+			Title.TextSize = 14.000
 			Title.TextXAlignment = Enum.TextXAlignment.Left
 
 			ToggleFrame.Name = "ToggleFrame"
 			ToggleFrame.Parent = Toggle
 			ToggleFrame.BackgroundColor3 = Color3.fromRGB(22, 23, 27)
 			ToggleFrame.Position = UDim2.new(0.893300176, 0, 0.142857149, 0)
-			ToggleFrame.Size = UDim2.new(0, 18, 0, 9.5)
+			ToggleFrame.Size = UDim2.new(0, 36, 0, 19)
 
 			ToggleFrameCorner.CornerRadius = UDim.new(1, 0)
 			ToggleFrameCorner.Name = "ToggleFrameCorner"
@@ -430,7 +430,7 @@ function VLib:Window(textgame)
 			ToggleFrameRainbow.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 			ToggleFrameRainbow.BackgroundTransparency = 1.000
 			ToggleFrameRainbow.Position = UDim2.new(-0.0198377371, 0, 0.00601506233, 0)
-			ToggleFrameRainbow.Size = UDim2.new(0, 18, 0, 9.5)
+			ToggleFrameRainbow.Size = UDim2.new(0, 36, 0, 19)
 
 			ToggleFrameRainbowCorner.CornerRadius = UDim.new(1, 0)
 			ToggleFrameRainbowCorner.Name = "ToggleFrameRainbowCorner"
@@ -439,8 +439,8 @@ function VLib:Window(textgame)
 			ToggleDot.Name = "ToggleDot"
 			ToggleDot.Parent = ToggleFrameRainbow
 			ToggleDot.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-			ToggleDot.Position = UDim2.new(0.104999997, -3, 0.289000005, -0)
-			ToggleDot.Size = UDim2.new(0, 6, 0, 6)
+			ToggleDot.Position = UDim2.new(0.104999997, -3, 0.289000005, -4)
+			ToggleDot.Size = UDim2.new(0, 16, 0, 16)
 
 			ToggleDotCorner.CornerRadius = UDim.new(1, 0)
 			ToggleDotCorner.Name = "ToggleDotCorner"
@@ -476,7 +476,7 @@ function VLib:Window(textgame)
 						TweenService:Create(
 							ToggleDot,
 							TweenInfo.new(.2, Enum.EasingStyle.Quad),
-							{Position = UDim2.new(0.595, -3, 0.289000005, -0)}
+							{Position = UDim2.new(0.595, -3, 0.289000005, -4)}
 						):Play()
 					else
 						TweenService:Create(
@@ -487,7 +487,7 @@ function VLib:Window(textgame)
 						TweenService:Create(
 							ToggleDot,
 							TweenInfo.new(.2, Enum.EasingStyle.Quad),
-							{Position = UDim2.new(0.104999997, -3, 0.289000005, -0)}
+							{Position = UDim2.new(0.104999997, -3, 0.289000005, -4)}
 						):Play()
 					end
 					Toggled = not Toggled
@@ -520,30 +520,30 @@ function VLib:Window(textgame)
 			Slider.Parent = Container
 			Slider.BackgroundColor3 = Color3.fromRGB(32, 33, 37)
 			Slider.Position = UDim2.new(-0.747557044, 0, 0.729113936, 0)
-			Slider.Size = UDim2.new(0, 201.5, 0, 24.5)
+			Slider.Size = UDim2.new(0, 403, 0, 49)
 			Slider.AutoButtonColor = false
 			Slider.Font = Enum.Font.Gotham
 			Slider.Text = ""
 			Slider.TextColor3 = Color3.fromRGB(255, 255, 255)
-			Slider.TextSize = 7.000
+			Slider.TextSize = 14.000
 
 			Title.Name = "Title"
 			Title.Parent = Slider
 			Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			Title.BackgroundTransparency = 1.000
 			Title.Position = UDim2.new(0.0198511165, 0, 0, 0)
-			Title.Size = UDim2.new(0, 96, 0, 14)
+			Title.Size = UDim2.new(0, 192, 0, 28)
 			Title.Font = Enum.Font.Gotham
 			Title.Text = text
 			Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-			Title.TextSize = 7.000
+			Title.TextSize = 14.000
 			Title.TextXAlignment = Enum.TextXAlignment.Left
 
 			SliderFrame.Name = "SliderFrame"
 			SliderFrame.Parent = Slider
 			SliderFrame.BackgroundColor3 = Color3.fromRGB(22, 23, 27)
 			SliderFrame.Position = UDim2.new(0.0223324299, 0, 0.563266039, 0)
-			SliderFrame.Size = UDim2.new(0, 192, 0, 5.5)
+			SliderFrame.Size = UDim2.new(0, 384, 0, 11)
 
 			SliderFrameCorner.Name = "SliderFrameCorner"
 			SliderFrameCorner.Parent = SliderFrame
@@ -553,7 +553,7 @@ function VLib:Window(textgame)
 			SliderIndicator.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 			SliderIndicator.BorderSizePixel = 0
 			SliderIndicator.Position = UDim2.new(-0.00260408712, 0, 0.0363603085, 0)
-			SliderIndicator.Size = UDim2.new((start or 0) / max, 0, 0, 5.5)
+			SliderIndicator.Size = UDim2.new((start or 0) / max, 0, 0, 11)
 
 			SliderIndicatorCorner.Name = "SliderIndicatorCorner"
 			SliderIndicatorCorner.Parent = SliderIndicator
@@ -567,11 +567,11 @@ function VLib:Window(textgame)
 			Value.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			Value.BackgroundTransparency = 1.000
 			Value.Position = UDim2.new(0.496277869, 0, 0, 0)
-			Value.Size = UDim2.new(0, 96, 0, 14)
+			Value.Size = UDim2.new(0, 192, 0, 28)
 			Value.Font = Enum.Font.Gotham
 			Value.Text = tostring(start and math.floor((start / max) * (max - min) + min) or 0)
 			Value.TextColor3 = Color3.fromRGB(255, 255, 255)
-			Value.TextSize = 7.000
+			Value.TextSize = 14.000
 			Value.TextXAlignment = Enum.TextXAlignment.Right
 
 			local function slide(input)
@@ -637,23 +637,23 @@ function VLib:Window(textgame)
 			Dropdown.Parent = Container
 			Dropdown.BackgroundColor3 = Color3.fromRGB(32, 33, 37)
 			Dropdown.Position = UDim2.new(-0.747557044, 0, 0.729113936, 0)
-			Dropdown.Size = UDim2.new(0, 201.5, 0, 14)
+			Dropdown.Size = UDim2.new(0, 403, 0, 28)
 			Dropdown.AutoButtonColor = false
 			Dropdown.Font = Enum.Font.Gotham
 			Dropdown.Text = ""
 			Dropdown.TextColor3 = Color3.fromRGB(255, 255, 255)
-			Dropdown.TextSize = 7.000
+			Dropdown.TextSize = 14.000
 
 			Title.Name = "Title"
 			Title.Parent = Dropdown
 			Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			Title.BackgroundTransparency = 1.000
 			Title.Position = UDim2.new(0.0198511165, 0, 0, 0)
-			Title.Size = UDim2.new(0, 96, 0, 14)
+			Title.Size = UDim2.new(0, 192, 0, 28)
 			Title.Font = Enum.Font.Gotham
 			Title.Text = text
 			Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-			Title.TextSize = 7.000
+			Title.TextSize = 14.000
 			Title.TextXAlignment = Enum.TextXAlignment.Left
 
 			DropdownCorner.CornerRadius = UDim.new(0, 6)
@@ -665,7 +665,7 @@ function VLib:Window(textgame)
 			Arrow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			Arrow.BackgroundTransparency = 1.000
 			Arrow.Position = UDim2.new(0.923076808, 0, 0.0357142836, 0)
-			Arrow.Size = UDim2.new(0, 12.5, 0, 12.5)
+			Arrow.Size = UDim2.new(0, 25, 0, 25)
 			Arrow.Image = "http://www.roblox.com/asset/?id=6034818372"
 
 			local DropdownFrame = Instance.new("Frame")
@@ -679,7 +679,7 @@ function VLib:Window(textgame)
 			DropdownFrame.BackgroundColor3 = Color3.fromRGB(32, 33, 37)
 			DropdownFrame.BorderSizePixel = 0
 			DropdownFrame.Position = UDim2.new(0.334374994, 0, 0.604166687, 0)
-			DropdownFrame.Size = UDim2.new(0, 201.5, 0, 0)
+			DropdownFrame.Size = UDim2.new(0, 403, 0, 0)
 			DropdownFrame.Visible = false
 
 			DropdownFrameCorner.Name = "DropdownFrameCorner"
@@ -692,7 +692,7 @@ function VLib:Window(textgame)
 			DropdownHolder.BackgroundTransparency = 1.000
 			DropdownHolder.BorderSizePixel = 0
 			DropdownHolder.Position = UDim2.new(0.0263156947, 0, 0.00326599111, 0)
-			DropdownHolder.Size = UDim2.new(0, 193, 0, 0)
+			DropdownHolder.Size = UDim2.new(0, 386, 0, 0)
 			DropdownHolder.ScrollBarThickness = 3
 			DropdownHolder.CanvasSize = UDim2.new(0, 0, 0, 0)
 			DropdownHolder.ScrollBarImageColor3 = Color3.fromRGB(48, 50, 56)
@@ -740,7 +740,7 @@ function VLib:Window(textgame)
 							true
 						)
 						DropdownHolder:TweenSize(
-							UDim2.new(0, 193, 0, FrameSize),
+							UDim2.new(0, 386, 0, FrameSize),
 							Enum.EasingDirection.Out,
 							Enum.EasingStyle.Quart,
 							0.1,
@@ -753,18 +753,18 @@ function VLib:Window(textgame)
 						):Play()
 						repeat
 							wait()
-						until DropdownFrame.Size == UDim2.new(0, 201.5, 0, FrameSize)
+						until DropdownFrame.Size == UDim2.new(0, 403, 0, FrameSize)
 						Container.CanvasSize = UDim2.new(0, 0, 0, ContainerLayout.AbsoluteContentSize.Y)
 					else
 						DropdownFrame:TweenSize(
-							UDim2.new(0, 201.5, 0, 0),
+							UDim2.new(0, 403, 0, 0),
 							Enum.EasingDirection.Out,
 							Enum.EasingStyle.Quart,
 							0.1,
 							true
 						)
 						DropdownHolder:TweenSize(
-							UDim2.new(0, 193, 0, 0),
+							UDim2.new(0, 386, 0, 0),
 							Enum.EasingDirection.Out,
 							Enum.EasingStyle.Quart,
 							0.1,
@@ -777,7 +777,7 @@ function VLib:Window(textgame)
 						):Play()
 						repeat
 							wait()
-						until DropdownFrame.Size == UDim2.new(0, 201.5, 0, 0)
+						until DropdownFrame.Size == UDim2.new(0, 403, 0, 0)
 						DropdownFrame.Visible = false
 						Container.CanvasSize = UDim2.new(0, 0, 0, ContainerLayout.AbsoluteContentSize.Y)
 					end
@@ -803,11 +803,11 @@ function VLib:Window(textgame)
 				Item.Parent = DropdownHolder
 				Item.BackgroundColor3 = Color3.fromRGB(32, 33, 37)
 				Item.Position = UDim2.new(0, 0, 0.0808080807, 0)
-				Item.Size = UDim2.new(0, 191, 0, 12)
+				Item.Size = UDim2.new(0, 382, 0, 24)
 				Item.AutoButtonColor = false
 				Item.Font = Enum.Font.Gotham
 				Item.TextColor3 = Color3.fromRGB(255, 255, 255)
-				Item.TextSize = 7.000
+				Item.TextSize = 14.000
 				Item.Text = v
 
 				ItemCorner.Name = "ItemCorner"
@@ -858,7 +858,7 @@ function VLib:Window(textgame)
 						):Play()
 						repeat
 							wait()
-						until DropdownFrame.Size == UDim2.new(0, 201.5, 0, 0)
+						until DropdownFrame.Size == UDim2.new(0, 403, 0, 0)
 						DropdownFrame.Visible = false
 						Container.CanvasSize = UDim2.new(0, 0, 0, ContainerLayout.AbsoluteContentSize.Y)
 					end
@@ -889,30 +889,30 @@ function VLib:Window(textgame)
 			Colorpicker.Parent = Container
 			Colorpicker.BackgroundColor3 = Color3.fromRGB(32, 33, 37)
 			Colorpicker.Position = UDim2.new(-0.747557044, 0, 0.729113936, 0)
-			Colorpicker.Size = UDim2.new(0, 201.5, 0, 14)
+			Colorpicker.Size = UDim2.new(0, 403, 0, 28)
 			Colorpicker.AutoButtonColor = false
 			Colorpicker.Font = Enum.Font.Gotham
 			Colorpicker.Text = ""
 			Colorpicker.TextColor3 = Color3.fromRGB(255, 255, 255)
-			Colorpicker.TextSize = 7.000
+			Colorpicker.TextSize = 14.000
 
 			Title.Name = "Title"
 			Title.Parent = Colorpicker
 			Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			Title.BackgroundTransparency = 1.000
 			Title.Position = UDim2.new(0.0198511165, 0, 0, 0)
-			Title.Size = UDim2.new(0, 96, 0, 14)
+			Title.Size = UDim2.new(0, 192, 0, 28)
 			Title.Font = Enum.Font.Gotham
 			Title.Text = text
 			Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-			Title.TextSize = 7.000
+			Title.TextSize = 14.000
 			Title.TextXAlignment = Enum.TextXAlignment.Left
 
 			BoxColor.Name = "Boxcolor"
 			BoxColor.Parent = Colorpicker
 			BoxColor.BackgroundColor3 = preset
 			BoxColor.Position = UDim2.new(0.893300176, 0, 0.142857149, 0)
-			BoxColor.Size = UDim2.new(0, 18, 0, 9.5)
+			BoxColor.Size = UDim2.new(0, 36, 0, 19)
 
 			BoxcolorCorner.CornerRadius = UDim.new(0, 6)
 			BoxcolorCorner.Name = "BoxcolorCorner"
@@ -948,7 +948,7 @@ function VLib:Window(textgame)
 			ColorpickerFrame.BackgroundColor3 = Color3.fromRGB(32, 33, 37)
 			ColorpickerFrame.BorderSizePixel = 0
 			ColorpickerFrame.Position = UDim2.new(0.165624991, 0, 0.671052635, 0)
-			ColorpickerFrame.Size = UDim2.new(0, 201.5, 0, 0)
+			ColorpickerFrame.Size = UDim2.new(0, 403, 0, 0)
 			ColorpickerFrame.Visible = false
 			ColorpickerFrame.ClipsDescendants = true
 
@@ -959,7 +959,7 @@ function VLib:Window(textgame)
 			Hue.Parent = ColorpickerFrame
 			Hue.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			Hue.Position = UDim2.new(0, 209, 0, 9)
-			Hue.Size = UDim2.new(0, 12.5, 0, 40)
+			Hue.Size = UDim2.new(0, 25, 0, 80)
 
 			HueCorner.CornerRadius = UDim.new(0, 3)
 			HueCorner.Name = "HueCorner"
@@ -985,14 +985,14 @@ function VLib:Window(textgame)
 			HueSelection.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			HueSelection.BackgroundTransparency = 1.000
 			HueSelection.Position = UDim2.new(0.48, 0, 1 - select(1, Color3.toHSV(preset)))
-			HueSelection.Size = UDim2.new(0, 9, 0, 9)
+			HueSelection.Size = UDim2.new(0, 18, 0, 18)
 			HueSelection.Image = "http://www.roblox.com/asset/?id=4805639000"
 
 			Color.Name = "Color"
 			Color.Parent = ColorpickerFrame
 			Color.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
 			Color.Position = UDim2.new(0, 9, 0, 9)
-			Color.Size = UDim2.new(0, 97, 0, 40)
+			Color.Size = UDim2.new(0, 194, 0, 80)
 			Color.ZIndex = 10
 			Color.Image = "rbxassetid://4155801252"
 
@@ -1006,7 +1006,7 @@ function VLib:Window(textgame)
 			ColorSelection.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			ColorSelection.BackgroundTransparency = 1.000
 			ColorSelection.Position = UDim2.new(preset and select(3, Color3.toHSV(preset)))
-			ColorSelection.Size = UDim2.new(0, 9, 0, 9)
+			ColorSelection.Size = UDim2.new(0, 18, 0, 18)
 			ColorSelection.Image = "http://www.roblox.com/asset/?id=4805639000"
 			ColorSelection.ScaleType = Enum.ScaleType.Fit
 
@@ -1015,12 +1015,12 @@ function VLib:Window(textgame)
 			Confirm.BackgroundColor3 = Color3.fromRGB(32, 33, 37)
 			Confirm.BackgroundTransparency = 0.010
 			Confirm.Position = UDim2.new(0.612244904, 0, 0.0900000036, 0)
-			Confirm.Size = UDim2.new(0, 72.5, 0, 13.5)
+			Confirm.Size = UDim2.new(0, 145, 0, 27)
 			Confirm.AutoButtonColor = false
 			Confirm.Font = Enum.Font.Gotham
 			Confirm.Text = "Confirm"
 			Confirm.TextColor3 = Color3.fromRGB(255, 255, 255)
-			Confirm.TextSize = 7.000
+			Confirm.TextSize = 14.000
 
 			ButtonCorner.Name = "ButtonCorner"
 			ButtonCorner.Parent = Confirm
@@ -1029,12 +1029,12 @@ function VLib:Window(textgame)
 			RainbowToggle.Parent = ColorpickerFrame
 			RainbowToggle.BackgroundColor3 = Color3.fromRGB(32, 33, 37)
 			RainbowToggle.Position = UDim2.new(0.610732794, 0, 0.431324542, 0)
-			RainbowToggle.Size = UDim2.new(0, 72.5, 0, 13.5)
+			RainbowToggle.Size = UDim2.new(0, 145, 0, 27)
 			RainbowToggle.AutoButtonColor = false
 			RainbowToggle.Font = Enum.Font.Gotham
 			RainbowToggle.Text = ""
 			RainbowToggle.TextColor3 = Color3.fromRGB(255, 255, 255)
-			RainbowToggle.TextSize = 7.000
+			RainbowToggle.TextSize = 14.000
 
 			RainbowToggleCorner.Name = "RainbowToggleCorner"
 			RainbowToggleCorner.Parent = RainbowToggle
@@ -1044,18 +1044,18 @@ function VLib:Window(textgame)
 			RainbowTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			RainbowTitle.BackgroundTransparency = 1.000
 			RainbowTitle.Position = UDim2.new(0.0204080511, 0, 0, 0)
-			RainbowTitle.Size = UDim2.new(0, 14.5, 0, 13.5)
+			RainbowTitle.Size = UDim2.new(0, 29, 0, 27)
 			RainbowTitle.Font = Enum.Font.Gotham
 			RainbowTitle.Text = "Toggle"
 			RainbowTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
-			RainbowTitle.TextSize = 7.000
+			RainbowTitle.TextSize = 14.000
 			RainbowTitle.TextXAlignment = Enum.TextXAlignment.Left
 
 			RainbowToggleFrame.Name = "RainbowToggleFrame"
 			RainbowToggleFrame.Parent = RainbowToggle
 			RainbowToggleFrame.BackgroundColor3 = Color3.fromRGB(22, 23, 27)
 			RainbowToggleFrame.Position = UDim2.new(0.693, 0, 0.142857149, 0)
-			RainbowToggleFrame.Size = UDim2.new(0, 18, 0, 9.5)
+			RainbowToggleFrame.Size = UDim2.new(0, 36, 0, 19)
 
 			RainbowToggleFrameCorner.CornerRadius = UDim.new(1, 0)
 			RainbowToggleFrameCorner.Name = "RainbowToggleFrameCorner"
@@ -1066,7 +1066,7 @@ function VLib:Window(textgame)
 			RainbowToggleFrameRainbow.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 			RainbowToggleFrameRainbow.BackgroundTransparency = 1.000
 			RainbowToggleFrameRainbow.Position = UDim2.new(-0.0198377371, 0, 0.00601506233, 0)
-			RainbowToggleFrameRainbow.Size = UDim2.new(0, 18, 0, 9.5)
+			RainbowToggleFrameRainbow.Size = UDim2.new(0, 36, 0, 19)
 
 			RainbowToggleFrameRainbowCorner.CornerRadius = UDim.new(1, 0)
 			RainbowToggleFrameRainbowCorner.Name = "RainbowToggleFrameRainbowCorner"
@@ -1075,8 +1075,8 @@ function VLib:Window(textgame)
 			RainbowToggleDot.Name = "RainbowToggleDot"
 			RainbowToggleDot.Parent = RainbowToggleFrameRainbow
 			RainbowToggleDot.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-			RainbowToggleDot.Position = UDim2.new(0.104999997, -3, 0.289000005, -0)
-			RainbowToggleDot.Size = UDim2.new(0, 6, 0, 6)
+			RainbowToggleDot.Position = UDim2.new(0.104999997, -3, 0.289000005, -4)
+			RainbowToggleDot.Size = UDim2.new(0, 16, 0, 16)
 
 			RainbowToggleDotCorner.CornerRadius = UDim.new(1, 0)
 			RainbowToggleDotCorner.Name = "RainbowToggleDotCorner"
@@ -1227,7 +1227,7 @@ function VLib:Window(textgame)
 						TweenService:Create(
 							RainbowToggleDot,
 							TweenInfo.new(.2, Enum.EasingStyle.Quad),
-							{Position = UDim2.new(0.595, -3, 0.289000005, -0)}
+							{Position = UDim2.new(0.595, -3, 0.289000005, -4)}
 						):Play()
 
 						OldToggleColor = BoxColor.BackgroundColor3
@@ -1254,7 +1254,7 @@ function VLib:Window(textgame)
 						TweenService:Create(
 							RainbowToggleDot,
 							TweenInfo.new(.2, Enum.EasingStyle.Quad),
-							{Position = UDim2.new(0.104999997, -3, 0.289000005, -0)}
+							{Position = UDim2.new(0.104999997, -3, 0.289000005, -4)}
 						):Play()
 
 						BoxColor.BackgroundColor3 = OldToggleColor
@@ -1274,7 +1274,7 @@ function VLib:Window(textgame)
 						ColorPickerToggled = not ColorPickerToggled
 						ColorpickerFrame.Visible = true
 						ColorpickerFrame:TweenSize(
-							UDim2.new(0, 201.5, 0, 50),
+							UDim2.new(0, 403, 0, 100),
 							Enum.EasingDirection.Out,
 							Enum.EasingStyle.Quart,
 							0.1,
@@ -1282,12 +1282,12 @@ function VLib:Window(textgame)
 						)
 						repeat
 							wait()
-						until ColorpickerFrame.Size == UDim2.new(0, 201.5, 0, 50)
+						until ColorpickerFrame.Size == UDim2.new(0, 403, 0, 100)
 						Container.CanvasSize = UDim2.new(0, 0, 0, ContainerLayout.AbsoluteContentSize.Y)
 					else
 						ColorPickerToggled = not ColorPickerToggled
 						ColorpickerFrame:TweenSize(
-							UDim2.new(0, 201.5, 0, 0),
+							UDim2.new(0, 403, 0, 0),
 							Enum.EasingDirection.Out,
 							Enum.EasingStyle.Quart,
 							0.1,
@@ -1295,7 +1295,7 @@ function VLib:Window(textgame)
 						)
 						repeat
 							wait()
-						until ColorpickerFrame.Size == UDim2.new(0, 201.5, 0, 0)
+						until ColorpickerFrame.Size == UDim2.new(0, 403, 0, 0)
 						ColorpickerFrame.Visible = false
 						Container.CanvasSize = UDim2.new(0, 0, 0, ContainerLayout.AbsoluteContentSize.Y)
 					end
@@ -1306,7 +1306,7 @@ function VLib:Window(textgame)
 				function()
 					ColorPickerToggled = not ColorPickerToggled
 					ColorpickerFrame:TweenSize(
-						UDim2.new(0, 201.5, 0, 0),
+						UDim2.new(0, 403, 0, 0),
 						Enum.EasingDirection.Out,
 						Enum.EasingStyle.Quart,
 						0.1,
@@ -1314,7 +1314,7 @@ function VLib:Window(textgame)
 					)
 					repeat
 						wait()
-					until ColorpickerFrame.Size == UDim2.new(0, 201.5, 0, 0)
+					until ColorpickerFrame.Size == UDim2.new(0, 403, 0, 0)
 					ColorpickerFrame.Visible = false
 					Container.CanvasSize = UDim2.new(0, 0, 0, ContainerLayout.AbsoluteContentSize.Y)
 				end
@@ -1335,11 +1335,11 @@ function VLib:Window(textgame)
 			Label.Name = "Label"
 			Label.Parent = Container
 			Label.BackgroundColor3 = Color3.fromRGB(32, 33, 37)
-			Label.Size = UDim2.new(0, 201.5, 0, 14)
+			Label.Size = UDim2.new(0, 403, 0, 28)
 			Label.AutoButtonColor = false
 			Label.Font = Enum.Font.Gotham
 			Label.TextColor3 = Color3.fromRGB(255, 255, 255)
-			Label.TextSize = 7.000
+			Label.TextSize = 14.000
 			Label.Text = text
 
 			LabelCorner.CornerRadius = UDim.new(0, 6)
@@ -1361,30 +1361,30 @@ function VLib:Window(textgame)
 			Textbox.Parent = Container
 			Textbox.BackgroundColor3 = Color3.fromRGB(32, 33, 37)
 			Textbox.Position = UDim2.new(-0.747557044, 0, 0.729113936, 0)
-			Textbox.Size = UDim2.new(0, 201.5, 0, 14)
+			Textbox.Size = UDim2.new(0, 403, 0, 28)
 			Textbox.AutoButtonColor = false
 			Textbox.Font = Enum.Font.Gotham
 			Textbox.Text = ""
 			Textbox.TextColor3 = Color3.fromRGB(255, 255, 255)
-			Textbox.TextSize = 7.000
+			Textbox.TextSize = 14.000
 
 			Title.Name = "Title"
 			Title.Parent = Textbox
 			Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			Title.BackgroundTransparency = 1.000
 			Title.Position = UDim2.new(0.0198511165, 0, 0, 0)
-			Title.Size = UDim2.new(0, 96, 0, 14)
+			Title.Size = UDim2.new(0, 192, 0, 28)
 			Title.Font = Enum.Font.Gotham
 			Title.Text = text
 			Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-			Title.TextSize = 7.000
+			Title.TextSize = 14.000
 			Title.TextXAlignment = Enum.TextXAlignment.Left
 
 			TextboxFrame.Name = "TextboxFrame"
 			TextboxFrame.Parent = Textbox
 			TextboxFrame.BackgroundColor3 = Color3.fromRGB(22, 23, 27)
 			TextboxFrame.Position = UDim2.new(0.650124013, 0, 0.142857149, 0)
-			TextboxFrame.Size = UDim2.new(0, 67, 0, 9.5)
+			TextboxFrame.Size = UDim2.new(0, 134, 0, 19)
 
 			TextboxFrameCorner.CornerRadius = UDim.new(0, 6)
 			TextboxFrameCorner.Name = "TextboxFrameCorner"
@@ -1393,11 +1393,11 @@ function VLib:Window(textgame)
 			TextBox.Parent = TextboxFrame
 			TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			TextBox.BackgroundTransparency = 1.000
-			TextBox.Size = UDim2.new(0, 67, 0, 9.5)
+			TextBox.Size = UDim2.new(0, 134, 0, 19)
 			TextBox.Font = Enum.Font.Gotham
 			TextBox.Text = ""
 			TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-			TextBox.TextSize = 7.000
+			TextBox.TextSize = 14.000
 
 			TextboxCorner.CornerRadius = UDim.new(0, 6)
 			TextboxCorner.Name = "TextboxCorner"
