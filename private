@@ -133,7 +133,7 @@ function VLib:Window(textgame)
 	MainFrame.Parent = Library
 	MainFrame.BackgroundColor3 = Color3.fromRGB(22, 23, 27)
 	MainFrame.Position = UDim2.new(0.340104192, 0, 0.297149122, 0)
-	MainFrame.Size = UDim2.new(0, 614, 0, 395)
+	MainFrame.Size = UDim2.new(0, 300, 0, 190)
 
 	MainCorner.CornerRadius = UDim.new(0, 7)
 	MainCorner.Name = "MainCorner"
