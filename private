@@ -439,8 +439,8 @@ function VLib:Window(textgame)
 			ToggleDot.Name = "ToggleDot"
 			ToggleDot.Parent = ToggleFrameRainbow
 			ToggleDot.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-			ToggleDot.Position = UDim2.new(0.104999997, -3, 0.289000005, -2)
-			ToggleDot.Size = UDim2.new(0, 4, 0, 4)
+			ToggleDot.Position = UDim2.new(0.104999997, -3, 0.289000005, -0)
+			ToggleDot.Size = UDim2.new(0, 6, 0, 6)
 
 			ToggleDotCorner.CornerRadius = UDim.new(1, 0)
 			ToggleDotCorner.Name = "ToggleDotCorner"
@@ -476,7 +476,7 @@ function VLib:Window(textgame)
 						TweenService:Create(
 							ToggleDot,
 							TweenInfo.new(.2, Enum.EasingStyle.Quad),
-							{Position = UDim2.new(0.595, -3, 0.289000005, -2)}
+							{Position = UDim2.new(0.595, -3, 0.289000005, -0)}
 						):Play()
 					else
 						TweenService:Create(
@@ -487,7 +487,7 @@ function VLib:Window(textgame)
 						TweenService:Create(
 							ToggleDot,
 							TweenInfo.new(.2, Enum.EasingStyle.Quad),
-							{Position = UDim2.new(0.104999997, -3, 0.289000005, -2)}
+							{Position = UDim2.new(0.104999997, -3, 0.289000005, -0)}
 						):Play()
 					end
 					Toggled = not Toggled
@@ -1075,8 +1075,8 @@ function VLib:Window(textgame)
 			RainbowToggleDot.Name = "RainbowToggleDot"
 			RainbowToggleDot.Parent = RainbowToggleFrameRainbow
 			RainbowToggleDot.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-			RainbowToggleDot.Position = UDim2.new(0.104999997, -3, 0.289000005, -2)
-			RainbowToggleDot.Size = UDim2.new(0, 4, 0, 4)
+			RainbowToggleDot.Position = UDim2.new(0.104999997, -3, 0.289000005, -0)
+			RainbowToggleDot.Size = UDim2.new(0, 6, 0, 6)
 
 			RainbowToggleDotCorner.CornerRadius = UDim.new(1, 0)
 			RainbowToggleDotCorner.Name = "RainbowToggleDotCorner"
@@ -1227,7 +1227,7 @@ function VLib:Window(textgame)
 						TweenService:Create(
 							RainbowToggleDot,
 							TweenInfo.new(.2, Enum.EasingStyle.Quad),
-							{Position = UDim2.new(0.595, -3, 0.289000005, -2)}
+							{Position = UDim2.new(0.595, -3, 0.289000005, -0)}
 						):Play()
 
 						OldToggleColor = BoxColor.BackgroundColor3
@@ -1254,7 +1254,7 @@ function VLib:Window(textgame)
 						TweenService:Create(
 							RainbowToggleDot,
 							TweenInfo.new(.2, Enum.EasingStyle.Quad),
-							{Position = UDim2.new(0.104999997, -3, 0.289000005, -2)}
+							{Position = UDim2.new(0.104999997, -3, 0.289000005, -0)}
 						):Play()
 
 						BoxColor.BackgroundColor3 = OldToggleColor
