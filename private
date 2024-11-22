@@ -440,7 +440,7 @@ function VLib:Window(textgame)
 			ToggleDot.Parent = ToggleFrameRainbow
 			ToggleDot.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			ToggleDot.Position = UDim2.new(0.104999997, -3, 0.289000005, -2)
-			ToggleDot.Size = UDim2.new(0, 2, 0, 2)
+			ToggleDot.Size = UDim2.new(0, 4, 0, 4)
 
 			ToggleDotCorner.CornerRadius = UDim.new(1, 0)
 			ToggleDotCorner.Name = "ToggleDotCorner"
